@@ -11,11 +11,17 @@ while True:
        deposit_amount = input("입금할 금액을 입력해주세요. : ")
        if  deposit_amount.isdigit() and int(deposit_amount) > 0:
              balance += int(deposit_amount)
-             print(f"고객님이 입금하신 금액은 {deposit_amount})원이고, 현재 잔액은 {balance}입니다.")
+             print(f"고객님이 입금하신 금액은 {deposit_amount}원이고, 현재 잔액은 {balance}입니다.")
        else:
            print("숫자형태로 입금액을 입력해 주십시오!")
     if num == "2":
-        pass    
+        withdraw_amount =   input("출금할 금액을 입력해주세요. : ")
+        if  withdraw_amount.isdigit() and int(deposit_amount) > 0:
+            withdraw_amount = min(balance,int(withdraw_amount))
+            balance -= withdraw_amount
+            print(f"고객님에서 출근한 금액은 {withdraw_amount}원이고, 현재 잔액은 {balance}원 입니다")
+        else:
+            pass
     if num == "3":
         pass      
     if num == "4":
